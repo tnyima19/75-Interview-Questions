@@ -32,27 +32,57 @@ int maxProduct(vector<int>& nums){
 }
 int maxProduct2(vector<int>& nums){
     int curr;
-    int max_so_far= 1;
-    int min_so_far = 1;
-    int max;
-    for(int i=0;i<nums.size();++i){
+    int max_so_far= nums[0];
+    int min_so_far = nums[0];
+    int max = 1;
+    int total;
+    if(nums.size()==1){
+        return nums[0];
+    }
+
+
+    for(int i=1;i<nums.size();++i){
+        //cout<<"i am"<<endl;
+       // total = nums[i] * 
         if(nums[i] > 0){
             max_so_far *= nums[i];
-        }else if(nums[i] == 0){
+            //cout<<max_so_far<< "oo"<<endl;
+            //cout<<"max > 0"<<endl;
             if(max_so_far> max){
                 max = max_so_far;
-                max_so_far = 1;
-                min_so_far = 1;
+                //cout<<max<<"max"<<endl;
             }
+        }else if(nums[i] == 0){
+            if(max_so_far == 1){// no changes have occured, and no maximum number above
+                max = nums[i];
+            }
+
+            max_so_far = 1;
+            min_so_far = 1;
+            //cout<<" i am in zero"<<endl;
+            
         }else if(nums[i] < 0 ){// when negative
-            min_so_far *= nums[i]; 
-            if(min_so_far > max){
-                max = min_so_far;
-                max_so_far = min_so_far;
+            //min_so_far *= nums[i];
+            //cout<<"i am in min"<<endl;
+            if(min_so_far< 0){
+                max_so_far = min_so_far * nums[i];
                 min_so_far = 1;
+                if(max< max_so_far){
+                    max = max_so_far;
+                    //cout<<"max:"<<max<<endl;
+                }
+            }else{
+                // min_so_far > 0
+                min_so_far = max_so_far * nums[i];
+                cout<<"min:"<< min_so_far<<endl;
+                max_so_far = 1;
+                //cout<<"min"<<endl;
+                //cout<<max<<"max at this point"<<endl; 
             }
         }
     }
+
+    //cout<<max<<endl;
 
     return max;
 
@@ -107,9 +137,9 @@ max_so_far is updated by taking the maximum value among:
 
 int main(){
     vector<int> arr;
-    arr.push_back(0);
-    arr.push_back(2);
-    //arr.push_back(-2);
+    arr.push_back(-2);
+    //arr.push_back(0);
+    //arr.push_back(1);
     //arr.push_back(4);
 
     int max = maxProduct2(arr);
