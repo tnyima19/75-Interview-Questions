@@ -64,7 +64,7 @@ int missingNumber(vector<int>& nums){
 // Binary method
 int missingNumberBinaryMethod(vector<int> nums){
     int largest_num = 0;
-    vector<int> second_arr  
+    vector<int> second_arr ;
     for(int i=0;i<nums.size();++i){
         if(nums[i]> largest_num){
             largest_num = nums[i];
