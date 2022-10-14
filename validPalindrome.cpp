@@ -82,6 +82,12 @@ bool isalpha_numeric(char a){
     return false;
 }
 
+
+/*
+
+this method is in constant time, 
+
+*/
 bool isPalindrome2(string s){
 int j = 0;
     for(int i=s.size()-1;i>= 0;--i){
