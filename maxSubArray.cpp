@@ -46,7 +46,7 @@ using namespace std;
         arr.push_back(-5);
         arr.push_back(4);
 
-        maxSubArray(arr);
+        cout<<maxSubArray(arr)<<endl;
 
         return 0;
     }
