@@ -54,7 +54,8 @@ int main(){
     isConnected.push_back(v2);
     isConnected.push_back(v3);
 
-    cout<<findCircleNum(isConnected)<<endl;
+    int result = findCircleNum(isConnected);
+    cout<<result<<endl;
 
     return 0;
 }
