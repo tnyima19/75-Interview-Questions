@@ -56,8 +56,5 @@ int main(){
 
     cout<<findCircleNum(isConnected)<<endl;
 
-
-
-
     return 0;
 }
