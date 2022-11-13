@@ -39,3 +39,33 @@
     }
     
 
+       /*
+    BOTTOM UP METHOD
+    START FORM 0 -> AMOUNT
+
+    */
+   int coinChangeBU(vector<int> coins, int amount){
+    vector<int> dp(amount +1, amount +1);
+    dp[0] = 0;
+
+        for(int i=1;i<amount+1;++i){
+            for(auto coin: coins){
+                if(i - coin >= 0){
+                    dp[i] = min(dp[i], 1+ dp[i-coin]);
+                }
+            }
+        }
+
+        if(dp[amount] == amount + 1){
+            return -1;
+        }
+
+        return dp[amount];
+
+   }
+
+int main(){
+
+
+    return 0;
+}
