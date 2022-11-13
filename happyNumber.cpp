@@ -29,7 +29,7 @@ using namespace std;
 
     int main(){
 
-        if(isHappy(19)){
+        if(isHappy(2)){
             cout<<"treue"<<endl;
         }else{
             cout<<"false"<<endl;
