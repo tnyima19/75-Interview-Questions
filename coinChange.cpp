@@ -2,6 +2,8 @@
 #include<map>
 #include<vector>
 
+using namespace std;
+
  map<int, int> hm;
     int coinChange(vector<int>& coins, int amount) {
         if( amount == 0){
